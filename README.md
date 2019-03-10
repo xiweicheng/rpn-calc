@@ -16,6 +16,7 @@
 12. 假如一个运算符找不到最够的运算数字，需要输出报警信息：operator <operator> (position: <pos>): insufficient parameters。并且在输出警报以后，后续的输出字符处理不再进行，直接显示当前的stack里面的内容即可。
 
 测试用例：
+
 ｀｀｀
 ==
 1.
