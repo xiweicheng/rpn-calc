@@ -4,7 +4,7 @@ import java.util.Stack;
 
 import com.rpm.calc.Step;
 import com.rpm.calc.Util;
-import com.rpm.calc.ex.OperatorErrExecption;
+import com.rpm.calc.ex.OperatorErrException;
 
 public class SqrtOperator extends AbstractOperator {
 
@@ -16,7 +16,7 @@ public class SqrtOperator extends AbstractOperator {
 	public void calc() {
 
 		if (this.stack.size() < 1) {
-			throw new OperatorErrExecption("sqrt");
+			throw new OperatorErrException("sqrt");
 		}
 
 		String a = this.stack.pop();

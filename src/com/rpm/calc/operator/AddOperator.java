@@ -4,7 +4,7 @@ import java.util.Stack;
 
 import com.rpm.calc.Step;
 import com.rpm.calc.Util;
-import com.rpm.calc.ex.OperatorErrExecption;
+import com.rpm.calc.ex.OperatorErrException;
 
 public class AddOperator extends AbstractOperator {
 
@@ -16,7 +16,7 @@ public class AddOperator extends AbstractOperator {
 	public void calc() {
 
 		if (this.stack.size() < 2) {
-			throw new OperatorErrExecption("+");
+			throw new OperatorErrException("+");
 		}
 
 		String b = this.stack.pop();
