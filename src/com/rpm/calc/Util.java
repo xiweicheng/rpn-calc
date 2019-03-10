@@ -2,6 +2,8 @@ package com.rpm.calc;
 
 import java.util.stream.Stream;
 
+import com.rpm.calc.operator.Operator;
+
 public final class Util {
 
 	private Util() {

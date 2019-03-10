@@ -1,29 +1,30 @@
-package com.rpm.calc;
+package com.rpm.calc.operator;
 
 import java.util.Stack;
 
+import com.rpm.calc.Step;
+import com.rpm.calc.Util;
+import com.rpm.calc.ex.OperatorErrExecption;
+
 public class AddOperator extends AbstractOperator {
 
-	public AddOperator(Stack<String> stack) {
-		super(stack);
+	public AddOperator(Stack<String> stack, Stack<Step> stackUndo) {
+		super(stack, stackUndo);
 	}
 
 	@Override
 	public void calc() {
 
-		// operator <operator> (position: <pos>): insufficient parameters
 		if (this.stack.size() < 2) {
-			System.err.println("operator + (position: " + this.stack.size() + "): insufficient parameters");
-			print();
-			return;
+			throw new OperatorErrExecption("+");
 		}
 
 		String b = this.stack.pop();
 		String a = this.stack.pop();
 
 		Double r = Util.toDouble(a) + Util.toDouble(b);
-		
-		System.out.println(r);
+
+		this.stackUndo.push(new Step(a, b, Operator.add));
 
 		this.stack.push(Util.subZeroAndDot(r));
 

@@ -1,8 +1,7 @@
-package com.rpm.calc;
+package com.rpm.calc.operator;
 
 public interface IOperator {
 	
 	void calc();
 	
-	void print();
 }

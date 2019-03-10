@@ -13,26 +13,50 @@ public class App {
 
 		while (true) {
 
-			String line = scanner.nextLine();
+			int index = 0;
 
-			String[] items = line.split("\\s+");
+			try {
+				String line = scanner.nextLine();
 
-			for (String item : items) {
+				String item = "";
 
-				if (Util.isNumber(item)) {
-					calc.add(item);
-				} else if (Util.isOperator(item)) {
-					calc.process(Util.toOperator(item));
+				for (int i = 0; i < line.length(); i++) {
+					index = i;
+					char s = line.charAt(index);
+					if (s != ' ') {
+						item = item + s;
+
+						if (index == line.length() - 1) {
+							calc(item);
+							item = "";
+						}
+					} else {
+
+						calc(item);
+						item = "";
+					}
 				}
 
+			} catch (Exception e) {
+				System.err
+						.println("operator " + e.getMessage() + " (position: " + index + "): insufficient parameters");
 			}
 
 			calc.print();
-			
-			System.out.println();
-			System.err.println();
+
 		}
 
+	}
+
+	public static void calc(String item) {
+
+		if (!item.equals("")) {
+			if (Util.isNumber(item)) {
+				calc.add(item);
+			} else if (Util.isOperator(item)) {
+				calc.process(Util.toOperator(item));
+			}
+		}
 	}
 
 }

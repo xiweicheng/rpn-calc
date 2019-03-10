@@ -1,4 +1,4 @@
-package com.rpm.calc;
+package com.rpm.calc.operator;
 
 public enum Operator {
 
