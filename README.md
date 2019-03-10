@@ -1,7 +1,8 @@
-用Java写一个逆波兰式的计算器。
+> 用Java写一个逆波兰式的计算器。
 
-需求：
-这个计算器有一个栈Stack，Stack里面(仅)可以容纳数字。
+## 需求：
+> 这个计算器有一个栈Stack，Stack里面(仅)可以容纳数字。
+
 1. 这个计算器等待用户的输入，输入的内容可以是包含空格分开的数字和计算符号。
 2. 输入的数字被压到stack，输入的计算符号将对stack最顶部的两个数字进行运算并将结果压到stack顶部。
 3. 运算符号包括+, -, *, /, sqrt, undo, clear
@@ -15,9 +16,9 @@
 11. 显示的数字不需要用科学计数法，用最简单的表示即可。
 12. 假如一个运算符找不到最够的运算数字，需要输出报警信息：operator <operator> (position: <pos>): insufficient parameters。并且在输出警报以后，后续的输出字符处理不再进行，直接显示当前的stack里面的内容即可。
 
-测试用例：
+## 测试用例：
 
-｀｀｀
+```
 ==
 1.
 输入：1 2 3 4 5
@@ -57,4 +58,4 @@ operator * (position: 15): insucient parameters 
 stack: 11
 (the 6 and 5 were not pushed on to the stack due to the previous error)
 
-｀｀｀
+```
